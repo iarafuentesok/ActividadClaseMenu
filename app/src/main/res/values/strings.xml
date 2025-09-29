@@ -14,4 +14,14 @@
     <string name="agregar_producto">Agregar Producto</string>
     <string name="lista_de_productos">Lista de Productos</string>
     <string name="productos">Productos</string>
+    <string name="eliminar_producto">Eliminar Producto</string>
+    <string name="ingrese_codigo_producto">Ingrese el código del producto</string>
+    <string name="hint_codigo_producto">Código del producto</string>
+    <string name="buscar">Buscar</string>
+    <string name="detalle_del_producto">Detalle del Producto</string>
+    <string name="confirme_eliminacion">Confirme la eliminación del producto seleccionado</string>
+    <string name="codigo">Código</string>
+    <string name="descripcion">Descripción</string>
+    <string name="precio">Precio</string>
+    <string name="confirmar_eliminacion">Confirmar eliminación</string>
 </resources>

@@ -17,6 +17,21 @@
         android:name="com.example.actividadclasemenu.ui.agregarProductos.AgregarProductoFragment"
         android:label="Agregar Productos"
         tools:layout="@layout/fragment_agregar_productos" />
+    <fragment
+        android:id="@+id/nav_delete"
+        android:name="com.example.actividadclasemenu.ui.eliminarProducto.EliminarProductoFragment"
+        android:label="@string/eliminar_producto"
+        tools:layout="@layout/fragment_eliminar_producto">
+        <action
+            android:id="@+id/action_nav_delete_to_detalleProductoFragment"
+            app:destination="@id/detalleProductoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalleProductoFragment"
+        android:name="com.example.actividadclasemenu.ui.eliminarProducto.DetalleProductoFragment"
+        android:label="@string/detalle_del_producto"
+        tools:layout="@layout/fragment_detalle_producto" />
 
     <fragment
         android:id="@+id/nav_slideshow"

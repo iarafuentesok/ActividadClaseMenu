@@ -13,6 +13,10 @@
             android:icon="@drawable/anadir"
             android:title="@string/agregar_producto" />
         <item
+            android:id="@+id/nav_delete"
+            android:icon="@drawable/delete"
+            android:title="@string/eliminar_producto" />
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/salida"
             android:title="@string/salir" />

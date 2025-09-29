@@ -46,5 +46,12 @@ public class ListaProductoFragment extends Fragment {
         // Solicita al ViewModel que obtenga los datos actuales para mostrarlos.
         vm.cargarProductos();
         return root;
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
