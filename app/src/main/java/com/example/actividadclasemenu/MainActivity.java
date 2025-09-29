@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
+    // Lista en memoria que almacena todos los productos creados durante la ejecución de la app.
     public static ArrayList<Producto> listaProductos = new ArrayList<>();
 
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        // Configura la barra de herramientas como ActionBar para integrar la navegación con el DrawerLayout.
         setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
+        // Permite manejar la navegación hacia atrás integrándola con el DrawerLayout y el NavController.
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();

@@ -1,6 +1,7 @@
 package com.example.actividadclasemenu.modelo;
 
 public class Producto {
+    //ATRIBUTOS PEDIDOS POR EL PROFE
     private String codigo;
     private String descripcion;
     private double precio;

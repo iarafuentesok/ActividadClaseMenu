@@ -11,9 +11,15 @@ import com.example.actividadclasemenu.modelo.Producto;
 public class AgregarProductosViewModel extends AndroidViewModel {
 
     MutableLiveData<String> errorCodigo;
+    // LiveData que expone el mensaje de error específico para el campo código.
     MutableLiveData<String> errorDescripcion;
+    // LiveData para comunicar errores relacionados con la descripción.
+
     MutableLiveData<String> errorPrecio;
+    // LiveData que notifica los problemas detectados en el precio ingresado.
+
     MutableLiveData<String> exito;
+    // LiveData que emite un mensaje informativo cuando el producto se agrega correctamente.
 
 
     public AgregarProductosViewModel(@NonNull Application application) {
@@ -49,17 +55,17 @@ public class AgregarProductosViewModel extends AndroidViewModel {
     }
 
     public void validateForm(String codigo, String descripcion, String precioTexto){
-
+        // Se eliminan espacios en blanco al inicio y final para evitar errores de validación.
         codigo = codigo.trim();
         descripcion = descripcion.trim();
         precioTexto = precioTexto.trim();
-
+        // Bandera que controla si se detectó algún error en la validación.
         boolean hayErrores = false;
 
         if(codigo.isEmpty()){
             errorCodigo.setValue("El código no puede estar vacío");
             hayErrores = true;
-        } else {
+        } else { // Se verifica que el código ingresado no esté repetido en la lista existente.
             for (Producto producto : listaProductos){
                 if (producto.getCodigo().equalsIgnoreCase(codigo)) {
                     errorCodigo.setValue("El código ya existe");
@@ -87,6 +93,7 @@ public class AgregarProductosViewModel extends AndroidViewModel {
                     hayErrores = true;
                 }
             } catch (NumberFormatException e) {
+                // En caso de que el usuario ingrese letras u otros caracteres no numéricos.
                 errorPrecio.setValue("Formato de precio inválido");
                 hayErrores = true;
             }
@@ -94,6 +101,7 @@ public class AgregarProductosViewModel extends AndroidViewModel {
 
 
         if(!hayErrores){
+            // Se limpian los mensajes previos y se agrega el nuevo producto a la lista general.
             limpiarErrores();
             Producto producto = new Producto(codigo, descripcion, precio);
             listaProductos.add(producto);
@@ -101,6 +109,7 @@ public class AgregarProductosViewModel extends AndroidViewModel {
         }
     }
 
+    // Restablece los mensajes de error para que la interfaz quede sin advertencias visibles.
     private void limpiarErrores(){
         errorCodigo.setValue("");
         errorDescripcion.setValue("");

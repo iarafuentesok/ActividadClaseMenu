@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class SalirViewModel extends AndroidViewModel {
+    // ViewModel vacío por ahora, reservado para futuras acciones al confirmar la salida.
 
 
 
